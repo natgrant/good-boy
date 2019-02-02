@@ -19,6 +19,10 @@ Allows user to modularise code and easily bundle in to single file for productio
 
 - Uses HTML Webpack plugin
 
+## Get that Sassy CSS
+
+- Uses SCSS (or SASS)
+
 ## Tests
 
 `npm test`
