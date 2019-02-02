@@ -1,10 +1,13 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import App from "../client/components/App";
+import App from "../src/components/App";
 
-test("<App />", () => {
-  const expected = "Let's make something!";
-  const wrapper = shallow(<App />);
-  expect(wrapper.text()).toBe(expected);
+describe("App", () => {
+  test("should match snapshot", () => {
+    const wrapper = shallow(<App />);
+
+    expect(wrapper.find("h1").text()).toBe("Welcome to my Starter App");
+    expect(wrapper).toMatchSnapshot;
+  });
 });

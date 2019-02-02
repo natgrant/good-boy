@@ -6,3 +6,12 @@ Homemade goodness
 
 `npm install`
 `npm start`
+
+## Babel
+
+Uses Babel and Babel packages
+
+## Tests
+
+`npm test`
+Uses Jest with Enzyme
