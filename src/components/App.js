@@ -1,12 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import { render } from "react-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
+import Home from "./Home";
+
+const App = () => {
+  return (
+    <Router>
       <div>
-        <h1>Welcome to my Starter App</h1>
+        <Route path="/" component={Home} />
       </div>
-    );
-  }
-}
+    </Router>
+  );
+};
+
 export default App;
