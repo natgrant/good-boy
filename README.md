@@ -1,6 +1,6 @@
 # My Sweet React Boilerplate
 
-Homemade goodness
+Homemade goodness :cake:
 
 ## Instructions
 
@@ -9,9 +9,21 @@ Homemade goodness
 
 ## Babel
 
-Uses Babel and Babel packages
+- Uses Babel and Babel packages
+
+- Including SASS Loader
+
+## webpack
+
+Allows user to modularise code and easily bundle in to single file for production.
+
+- Uses HTML Webpack plugin
 
 ## Tests
 
 `npm test`
 Uses Jest with Enzyme
+
+## Build
+
+`npm run build`
