@@ -5,11 +5,13 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import Home from "./Home";
 import Dogs from "./Dogs";
 import Form from "./Form";
+import Parallex from "./Parallex";
 
 const App = () => {
   return (
     <Router>
       <div>
+        <Parallex />
         <div>
           <Route path="/" component={Home} />
         </div>
