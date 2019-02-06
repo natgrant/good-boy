@@ -37,7 +37,7 @@ module.exports = {
   devtool: "source-map",
   plugins: [
     new HtmlWebPackPlugin({
-      template: "index.html"
+      template: "./public/index.html"
     }),
     new CleanWebpackPlugin(["dist"])
   ]
