@@ -1,18 +1,15 @@
-// Remove routes from App & add here!!
-
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
-import Form from "./containers/FormContainer";
-import Home from "./containers/HomeContainer";
+import Header from "./components/Header";
 
 class Routes extends Component {
   render() {
     return (
       <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
+        <Router>
+          <Route exact path="/" component={Header} />
+        </Router>
       </div>
     );
   }
