@@ -8,7 +8,7 @@ class Routes extends Component {
     return (
       <div>
         <Router>
-          <Route exact path="/" component={Header} />
+          <Route path="/" component={Header} />
         </Router>
       </div>
     );
