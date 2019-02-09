@@ -7,7 +7,7 @@ const Dogs = props => {
     <div>
       <h2>{selectedDog}</h2>
       <ul>
-        {dogs[selectedDog].map((god, i) => (
+        {dogs[selectedDog].map((dog, i) => (
           <Link to={`/${selectedDog}/${dog.id}`} key={i}>
             <li>{dog.name}</li>
           </Link>
