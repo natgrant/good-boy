@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Routes from "../routes";
-import Parallex from "../components/Parallex";
+import Background from "../components/Background";
 import Form from "../containers/Form";
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
       <Fragment>
         <div className="App">
           <Routes />
-          <Parallex />
+          <Background />
           <Form />
         </div>
       </Fragment>
