@@ -7,7 +7,6 @@ const Parallex = () => {
         <svg preserveAspectRatio="none" viewBox="0 0 100 100">
           <polygon points="100,100 100,0 0,100" opacity="1" />
         </svg>
-        {/* TODO: move this polygon line */}
         <svg
           id="polygon-1"
           x="0px"
