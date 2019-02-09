@@ -13,7 +13,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        loader: ["babel-loader"]
       },
       {
         test: /\.s(a|c)ss$/,
@@ -35,6 +35,9 @@ module.exports = {
     extensions: [".js", ".jsx"]
   },
   devtool: "source-map",
+  devServer: {
+    contentBase: "./public"
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html"
