@@ -1,10 +1,8 @@
 import request from "superagent";
 
-export function getUsers() {
-  return request.get("/api");
-  then(res => {
-    return res.body;
+export function getDogs() {
+  return request.get("/api").then(res => {
+    const dogs = res.body;
+    return dogs;
   });
 }
-
-// client side needs to speak to DB
