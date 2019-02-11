@@ -6,7 +6,6 @@ router.use(express.json());
 router.get("/", (req, res) => {
   db.getDogs()
     .then(dogs => {
-      console.log(dogs);
       res.json(dogs);
     })
     .catch(err => {
