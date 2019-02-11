@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Select from "../components/Select";
 import Button from "../components/Button";
+import Result from "../components/Result";
+import { map } from "bluebird";
 
 class Form extends Component {
   constructor(props) {
@@ -17,6 +19,7 @@ class Form extends Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.mapHumanAttributesToDog.bind(this);
   }
   handleInput(event) {
     let value = event.target.value;
@@ -33,9 +36,26 @@ class Form extends Component {
   }
   handleFormSubmit(event) {
     event.preventDefault();
-    let userData = this.state.userInput;
-    console.log(userData);
+    let { lifestyle, availableSpace, allergies } = this.props;
+    this.mapHumanAttributesToDog(lifestyle, availableSpace, allergies);
+    // let userSelection = this.state.userInput;
   }
+
+  mapHumanAttributesToDog(lifestyle, availableSpace, allergies) {
+    // return dogs based on human attributes
+
+    if (
+      lifestyle != "Sedentary" &&
+      availableSpace != "Apartment" &&
+      allergies != "Yes"
+    ) {
+      return null;
+    } else {
+      render();
+      return <Results />;
+    }
+  }
+
   render() {
     return (
       <div className="user-form">
