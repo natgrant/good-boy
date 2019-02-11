@@ -3,7 +3,6 @@ const db = require("../db/db");
 const router = express.Router();
 router.use(express.json());
 
-//TODO: add some heckin' routes
 router.get("/", (req, res) => {
   db.getDogs()
     .then(dogs => {

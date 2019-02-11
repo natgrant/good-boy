@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, "server/public"),
+    path: path.join(__dirname, "public"),
     filename: "bundle.js"
   },
   module: {
@@ -13,7 +13,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: ["babel-loader"]
+        loader: "babel-loader"
       },
       {
         test: /\.s(a|c)ss$/,
