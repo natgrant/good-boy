@@ -28,11 +28,11 @@ body {
   font-family: $font-header;
   color: $color-head;
   text-transform: uppercase;
-  margin: 118px;
+  margin-left: 118px;
   position: fixed;
   top: 0px;
   left: 9px;
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
 #header h2 {
@@ -68,10 +68,26 @@ polygon {
 }
 
 .form-container {
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-left: 2rem;
 }
 
 .text-muted {
   opacity: 0.25;
+}
+
+.user-form {
+  margin-top: 10rem;
+  padding: 10rem;
+  color: $color-subheader;
+}
+
+.submit-button {
+  margin-top: 1.3rem;
+  margin-left: 0.8rem;
+}
+
+#form-header,
+h1 {
+  margin-top: 4rem;
 }
