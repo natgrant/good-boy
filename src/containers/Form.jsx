@@ -74,7 +74,9 @@ class Form extends Component {
     if (this.props.isShowing) {
       return (
         <div className="user-form">
-          <h1>Woof, tell me more human</h1>
+          <h1>
+            Woof, please do me a heckin' kindness and give me some more detail:
+          </h1>
           <form onSubmit={this.handleFormSubmit}>
             <FormSelect
               title={"Lifestyle"}
