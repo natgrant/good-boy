@@ -20,7 +20,7 @@ class SubmitButton extends Component {
     const { classes } = this.props;
     if (this.props.isShowing) {
       return (
-        <div>
+        <div className="submit-button">
           <Button
             variant="outlined"
             color="secondary"
