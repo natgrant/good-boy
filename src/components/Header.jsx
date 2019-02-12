@@ -2,7 +2,7 @@ import React from "react";
 
 const title = "good boy";
 const subHeading =
-  "Doggo ipsum mlem borkdrive snoot most angery pupper I have ever seen boof, clouds thicc clouds. Big ol pupper very taste wow most angery pupper I have ever seen adorable doggo doge, fluffer heckin angery woofer noodle horse woofer, boof sub woofer doggo. Pats what a nice floof most angery pupper I have ever seen very hand that feed shibe, adorable doggo.";
+  "Hey there fren, you looking for a forever doggo to feed schmackos and take for regular walkies? Please give me some information and I can let you know which breed of pupper would best work for you";
 const icon = "https://img.icons8.com/color/48/000000/hachiko.png";
 
 const Header = () => {
