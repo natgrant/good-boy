@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Select from "../components/Select";
 import Button from "../components/Button";
-import Result from "../components/Result";
-import { map } from "bluebird";
 
 class Form extends Component {
   constructor(props) {
@@ -17,14 +15,16 @@ class Form extends Component {
       availableSpace: ["Apartment", "Suburban House", "Countryside"],
       allergies: ["Yes", "No"]
     };
-    this.handleInput = this.handleInput.bind(this);
+    this.handleFormInput = this.handleFormInput.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.mapHumanAttributesToDog.bind(this);
+    this.mapHumanAttributesToDog = this.mapHumanAttributesToDog.bind(this);
   }
-  handleInput(event) {
+
+  handleFormInput(event) {
     let value = event.target.value;
     let name = event.target.name;
     this.setState(
+      //set state directly for each
       prevState => ({
         userInput: {
           ...prevState.userInput,
@@ -34,26 +34,30 @@ class Form extends Component {
       () => console.log(this.state.userInput)
     );
   }
+
   handleFormSubmit(event) {
     event.preventDefault();
-    let { lifestyle, availableSpace, allergies } = this.props;
-    this.mapHumanAttributesToDog(lifestyle, availableSpace, allergies);
-    // let userSelection = this.state.userInput;
+    let dog = this.mapHumanAttributesToDog(
+      lifestyle,
+      availableSpace,
+      allergies
+    );
+    console.log(dog);
+    this.props.setDog(dog);
   }
 
   mapHumanAttributesToDog(lifestyle, availableSpace, allergies) {
     // return dogs based on human attributes
-
-    if (
-      lifestyle != "Sedentary" &&
-      availableSpace != "Apartment" &&
-      allergies != "Yes"
-    ) {
-      return null;
-    } else {
-      render();
-      return <Results />;
-    }
+    let results = {
+      "Sedentary-Apartment-Yes": "something",
+      "Sedentary-Apartment-No": "somthingelse",
+      "Sedentary-Apartment-No": "somthingelse"
+    };
+    console.log(results);
+    let yourResult =
+      results[lifestyle + "-" + availableSpace + "-" + allergies];
+    console.log(yourResult);
+    if (!yourResult) yourResult = "goodbye";
   }
 
   render() {
@@ -67,7 +71,7 @@ class Form extends Component {
             options={this.state.lifestyleOptions}
             value={this.state.userInput.lifestyle}
             placeholder={"Select Lifestyle"}
-            handleChange={this.handleInput}
+            handleChange={this.handleFormInput}
           />
           <Select
             title={"Housing"}
@@ -75,7 +79,7 @@ class Form extends Component {
             options={this.state.availableSpace}
             value={this.state.userInput.availableSpace}
             placeholder={"Select Housing"}
-            handleChange={this.handleInput}
+            handleChange={this.handleFormInput}
           />
           <Select
             title={"Allergies"}
@@ -83,7 +87,7 @@ class Form extends Component {
             options={this.state.allergies}
             value={this.state.userInput.allergies}
             placeholder={"Please Select"}
-            handleChange={this.handleInput}
+            handleChange={this.handleFormInput}
           />
           <Button
             action={this.handleFormSubmit}

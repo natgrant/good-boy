@@ -14,7 +14,7 @@ class App extends Component {
     };
   }
 
-  // TODO:
+  //TODO:
   // if null show the form
   // else hide the form component and show doggo result
   setDog = dog => {
