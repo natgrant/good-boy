@@ -10,23 +10,29 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentDog: null
+      currentDog: "",
+      formShowing: true,
+      resultShowing: false
     };
+
+    this.setDog = this.setDog.bind(this);
   }
 
-  //TODO:
-  // if null show the form
-  // else hide the form component and show doggo result
   setDog = dog => {
+    console.log(`dog in App: ${dog}`);
     this.setState({
-      currentDog: dog
+      currentDog: dog,
+      formShowing: false,
+      resultShowing: true
     });
   };
 
   // TODO: reset state
   reset = () => {
     this.setState({
-      currentDog: null
+      currentDog: "",
+      isShowing: true,
+      resultShowing: false
     });
   };
 
@@ -36,9 +42,11 @@ class App extends Component {
         <div className="App">
           <Routes />
           <Background />
-          <Form setDog={this.setDog} />
-          <Result />
-          <DogParks />
+          <Form isShowing={this.state.formShowing} setDog={this.setDog} />
+          <Result
+            isShowing={this.state.resultShowing}
+            dog={this.state.currentDog}
+          />
         </div>
       </Fragment>
     );
