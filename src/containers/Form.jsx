@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import Select from "../components/Select";
-import Button from "../components/Button";
+import SubmitButton from "../components/SubmitButton";
+import FormSelect from "../components/FormSelect";
 
 class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showFormSubmit: true,
+      currentDog: "",
       userInput: {
         lifestyle: "",
         availableSpace: "",
@@ -15,6 +17,7 @@ class Form extends Component {
       availableSpace: ["Apartment", "Suburban House", "Countryside"],
       allergies: ["Yes", "No"]
     };
+
     this.handleFormInput = this.handleFormInput.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.mapHumanAttributesToDog = this.mapHumanAttributesToDog.bind(this);
@@ -23,6 +26,7 @@ class Form extends Component {
   handleFormInput(event) {
     let value = event.target.value;
     let name = event.target.name;
+
     this.setState(
       //set state directly for each
       prevState => ({
@@ -37,66 +41,78 @@ class Form extends Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
+
+    let { lifestyle, availableSpace, allergies } = this.state.userInput;
     let dog = this.mapHumanAttributesToDog(
       lifestyle,
       availableSpace,
       allergies
     );
-    console.log(dog);
+    console.log(`dog in handleFormSubmit: ${dog}`);
+
     this.props.setDog(dog);
   }
 
   mapHumanAttributesToDog(lifestyle, availableSpace, allergies) {
     // return dogs based on human attributes
-    let results = {
-      "Sedentary-Apartment-Yes": "something",
-      "Sedentary-Apartment-No": "somthingelse",
-      "Sedentary-Apartment-No": "somthingelse"
+    let dogMappings = {
+      "Sedentary-Apartment-Yes": "Terrier",
+      "Sedentary-Apartment-No": "Spaniel",
+      "Active-Apartment-No": "Alsatian"
     };
-    console.log(results);
-    let yourResult =
-      results[lifestyle + "-" + availableSpace + "-" + allergies];
-    console.log(yourResult);
-    if (!yourResult) yourResult = "goodbye";
+
+    let dogMappingsKey = `${lifestyle}-${availableSpace}-${allergies}`;
+    let dog = dogMappings[dogMappingsKey];
+
+    console.log(`the dog is: ${dog}`);
+
+    if (!dog) dog = "SOME CRAZY BREED FROM NORWAY";
+    return dog;
   }
 
   render() {
-    return (
-      <div className="user-form">
-        <h1>Hey human tell me more</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <Select
-            title={"Lifestyle"}
-            name={"lifestyle"}
-            options={this.state.lifestyleOptions}
-            value={this.state.userInput.lifestyle}
-            placeholder={"Select Lifestyle"}
-            handleChange={this.handleFormInput}
-          />
-          <Select
-            title={"Housing"}
-            name={"availableSpace"}
-            options={this.state.availableSpace}
-            value={this.state.userInput.availableSpace}
-            placeholder={"Select Housing"}
-            handleChange={this.handleFormInput}
-          />
-          <Select
-            title={"Allergies"}
-            name={"allergies"}
-            options={this.state.allergies}
-            value={this.state.userInput.allergies}
-            placeholder={"Please Select"}
-            handleChange={this.handleFormInput}
-          />
-          <Button
-            action={this.handleFormSubmit}
-            type={"submit"}
-            title={"Submit"}
-          />
-        </form>
-      </div>
-    );
+    if (this.props.isShowing) {
+      return (
+        <div className="user-form">
+          <h1>Woof, tell me more human</h1>
+          <form onSubmit={this.handleFormSubmit}>
+            <FormSelect
+              title={"Lifestyle"}
+              name={"lifestyle"}
+              options={this.state.lifestyleOptions}
+              value={this.state.userInput.lifestyle}
+              placeholder={"Select Lifestyle"}
+              handleChange={this.handleFormInput}
+            />
+            <FormSelect
+              title={"Housing"}
+              name={"availableSpace"}
+              options={this.state.availableSpace}
+              value={this.state.userInput.availableSpace}
+              placeholder={"Select Housing"}
+              handleChange={this.handleFormInput}
+            />
+            <FormSelect
+              title={"Allergies"}
+              name={"allergies"}
+              options={this.state.allergies}
+              value={this.state.userInput.allergies}
+              placeholder={"Please Select"}
+              handleChange={this.handleFormInput}
+            />
+            <SubmitButton
+              action={this.handleFormSubmit}
+              // disabled={this.state.showFormSubmit}
+              isShowing={this.state.showFormSubmit}
+              type={"submit"}
+              title={"Go Fetch"}
+            />
+          </form>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 export default Form;
