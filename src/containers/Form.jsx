@@ -58,7 +58,24 @@ class Form extends Component {
     let dogMappings = {
       "Sedentary-Apartment-Yes": "Terrier",
       "Sedentary-Apartment-No": "Spaniel",
-      "Active-Apartment-No": "Alsatian"
+      "Sedentary-Suburban House-Yes": "Terrier",
+      "Sedentary-Suburban House-No": "Spaniel",
+      "Sedentary-Countryside-Yes": "Terrier",
+      "Sedentary-Countryside-No": "Spaniel",
+
+      "Active-Apartment-Yes": "Terrier",
+      "Active-Apartment-No": "Spaniel",
+      "Active-Suburban House-Yes": "Terrier",
+      "Active-Suburban House-No": "Spaniel",
+      "Active-Countryside-Yes": "Terrier",
+      "Active-Countryside-No": "Spaniel",
+
+      "Highly Active-Apartment-Yes": "Terrier",
+      "Highly Active-Apartment-No": "Spaniel",
+      "Highly Active-Suburban House-Yes": "Terrier",
+      "Highly Active-Suburban House-No": "Spaniel",
+      "Highly Active-Countryside-Yes": "Terrier",
+      "Highly Active-Countryside-No": "Spaniel"
     };
 
     let dogMappingsKey = `${lifestyle}-${availableSpace}-${allergies}`;
@@ -74,7 +91,7 @@ class Form extends Component {
     if (this.props.isShowing) {
       return (
         <div className="user-form">
-          <h1>
+          <h1 id="form-header">
             Woof, please do me a heckin' kindness and give me some more detail:
           </h1>
           <form onSubmit={this.handleFormSubmit}>
