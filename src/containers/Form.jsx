@@ -60,14 +60,14 @@ class Form extends Component {
     let dogMappings = {
       "Sedentary-Apartment-Yes": dogData.dogs[4],
       "Sedentary-Apartment-No": dogData.dogs[0],
-      "Sedentary-Suburban House-Yes": dogData.dogs[1],
+      "Sedentary-Suburban House-Yes": dogData.dogs[2],
       "Sedentary-Suburban House-No": dogData.dogs[2],
       "Sedentary-Countryside-Yes": dogData.dogs[0],
       "Sedentary-Countryside-No": dogData.dogs[0],
 
-      "Active-Apartment-Yes": dogData.dogs[0],
-      "Active-Apartment-No": dogData.dogs[0],
-      "Active-Suburban House-Yes": dogData.dogs[0],
+      "Active-Apartment-Yes": dogData.dogs[4],
+      "Active-Apartment-No": dogData.dogs[3],
+      "Active-Suburban House-Yes": dogData.dogs[1],
       "Active-Suburban House-No": dogData.dogs[0],
       "Active-Countryside-Yes": dogData.dogs[0],
       "Active-Countryside-No": dogData.dogs[0],
