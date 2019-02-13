@@ -3,7 +3,7 @@ import Routes from "../routes";
 import Background from "../components/Background";
 import Form from "../containers/Form";
 import DogParks from "../components/DogParks";
-import Result from "../components/Result";
+import DogResult from "../components/DogResult";
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class App extends Component {
           <Routes />
           <Background />
           <Form isShowing={this.state.formShowing} setDog={this.setDog} />
-          <Result
+          <DogResult
             isShowing={this.state.resultShowing}
             dog={this.state.currentDog}
           />
