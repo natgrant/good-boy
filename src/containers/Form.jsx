@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SubmitButton from "../components/SubmitButton";
 import FormSelect from "../components/FormSelect";
+import dogData from "../../data/dogs";
 
 class Form extends Component {
   constructor(props) {
@@ -55,27 +56,28 @@ class Form extends Component {
 
   mapHumanAttributesToDog(lifestyle, availableSpace, allergies) {
     // return dogs based on human attributes
+    console.log(dogData.dogs[0]);
     let dogMappings = {
-      "Sedentary-Apartment-Yes": "Terrier",
-      "Sedentary-Apartment-No": "Spaniel",
-      "Sedentary-Suburban House-Yes": "Terrier",
-      "Sedentary-Suburban House-No": "Spaniel",
-      "Sedentary-Countryside-Yes": "Terrier",
-      "Sedentary-Countryside-No": "Spaniel",
+      "Sedentary-Apartment-Yes": dogData.dogs[4],
+      "Sedentary-Apartment-No": dogData.dogs[0],
+      "Sedentary-Suburban House-Yes": dogData.dogs[1],
+      "Sedentary-Suburban House-No": dogData.dogs[2],
+      "Sedentary-Countryside-Yes": dogData.dogs[0],
+      "Sedentary-Countryside-No": dogData.dogs[0],
 
-      "Active-Apartment-Yes": "Terrier",
-      "Active-Apartment-No": "Spaniel",
-      "Active-Suburban House-Yes": "Terrier",
-      "Active-Suburban House-No": "Spaniel",
-      "Active-Countryside-Yes": "Terrier",
-      "Active-Countryside-No": "Spaniel",
+      "Active-Apartment-Yes": dogData.dogs[0],
+      "Active-Apartment-No": dogData.dogs[0],
+      "Active-Suburban House-Yes": dogData.dogs[0],
+      "Active-Suburban House-No": dogData.dogs[0],
+      "Active-Countryside-Yes": dogData.dogs[0],
+      "Active-Countryside-No": dogData.dogs[0],
 
-      "Highly Active-Apartment-Yes": "Terrier",
-      "Highly Active-Apartment-No": "Spaniel",
-      "Highly Active-Suburban House-Yes": "Terrier",
-      "Highly Active-Suburban House-No": "Spaniel",
-      "Highly Active-Countryside-Yes": "Terrier",
-      "Highly Active-Countryside-No": "Spaniel"
+      "Highly Active-Apartment-Yes": dogData.dogs[0],
+      "Highly Active-Apartment-No": dogData.dogs[0],
+      "Highly Active-Suburban House-Yes": dogData.dogs[0],
+      "Highly Active-Suburban House-No": dogData.dogs[0],
+      "Highly Active-Countryside-Yes": dogData.dogs[0],
+      "Highly Active-Countryside-No": dogData.dogs[0]
     };
 
     let dogMappingsKey = `${lifestyle}-${availableSpace}-${allergies}`;

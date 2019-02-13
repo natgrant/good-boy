@@ -5,7 +5,7 @@ $font-special: "Josefin Slab";
 
 // Colours
 $color-head: #0b3c5d;
-$color-body: #b4dbc0;
+$color-body: #9ad3be;
 $color-polygon: #ff3b3f;
 $color-subheader: #ffffff;
 
@@ -32,11 +32,11 @@ body {
   position: fixed;
   top: 0px;
   left: 9px;
-  font-size: 6rem;
+  font-size: 7rem;
 }
 
 #header h2 {
-  padding: 420px 20px 0 650px;
+  padding: 480px 25px 0 650px;
   margin-right: 2rem;
   font-family: $font-body;
   font-weight: 400;
@@ -84,18 +84,28 @@ polygon {
 
 .submit-button {
   margin-top: 1.3rem;
-  margin-left: 0.8rem;
+  margin-left: 0.9rem;
 }
 
 #form-header,
 h1 {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .dog-result {
-  margin-left: 8rem;
+  margin-left: 15rem;
   margin-top: 30rem;
   margin-bottom: 10rem;
+}
+.doge {
+  right: 0;
+  height: 300px;
+  z-index: 5;
+  transition: transform 2s ease-in-out 1s;
+  filter: grayscale(0.5);
+}
+.doge-revealed {
+  transform: translateY(-100%);
 }
 
 .dog-result,

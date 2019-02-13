@@ -2,7 +2,7 @@ import React from "react";
 
 const title = "good boy";
 const subHeading =
-  "Hey there fren, you looking for a forever doggo to feed schmackos and take for regular walkies? Please give me some information and I can let you know which breed of pupper would best work for you";
+  "Hey there fren are you looking for a good boi to feed schmackos and take for regular walkies? Please give me some information and I can let you know which type of doggo would be the best fit for you!";
 const icon = "https://img.icons8.com/color/48/000000/hachiko.png";
 
 const Header = () => {
