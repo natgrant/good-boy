@@ -26,31 +26,34 @@ class DogResult extends Component {
     const { classes } = this.props;
     if (this.props.isShowing) {
       return (
-        <Card className={classes.card}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image="/doggo.jpg"
-              title="beautiful pup"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {this.props.dog}
-              </Typography>
-              <Typography component="p" className="display-dog">
-                Additional Info Here!
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
-        </Card>
+        <div className="dog-result">
+          <h2>Thanks human, based on your input your new best friend is:</h2>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="/doggo.jpg"
+                title="beautiful pup"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {this.props.dog}
+                </Typography>
+                <Typography component="p" className="display-dog">
+                  Additional Info Here!
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
+        </div>
       );
     } else {
       return null;
