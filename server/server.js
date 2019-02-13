@@ -14,13 +14,13 @@ server.use(express.static(path.join(__dirname, "../public")));
 server.use("/api", routes);
 
 // External API
-server.get("/api/dogparks/:name", (req, res) => {
-  const apiEndPoint =
-    "http://data-wcc.opendata.arcgis.com/datasets/ce44eb0d60be45dfbebcc49bcc5ef275_0.geojson";
-  request.get(apiEndPoint + req.params).then(apiRes => {
-    console.log(apiRes);
-    res.json(apiRes.body);
-  });
-});
+// server.get("/api/dogparks/:name", (req, res) => {
+//   const apiEndPoint =
+//     "http://data-wcc.opendata.arcgis.com/datasets/ce44eb0d60be45dfbebcc49bcc5ef275_0.geojson";
+//   request.get(apiEndPoint + req.params).then(apiRes => {
+//     console.log(apiRes);
+//     res.json(apiRes.body);
+//   });
+// });
 
 module.exports = server;

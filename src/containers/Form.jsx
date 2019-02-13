@@ -83,7 +83,7 @@ class Form extends Component {
 
     console.log(`the dog is: ${dog}`);
 
-    if (!dog) dog = "SOME CRAZY BREED FROM NORWAY";
+    if (!dog) dog = "NO MATCH SRRY :,(";
     return dog;
   }
 

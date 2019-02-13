@@ -1,7 +1,7 @@
-import request from "superagent";
+// import request from "superagent";
 
-const apiEndPoint = "/api/dogparks/";
+// const apiEndPoint = "/api/dogparks/";
 
-export function getParks(name) {
-  return request.get(apiEndPoint + name).then(res => res.body);
-}
+// export function getParks(name) {
+//   return request.get(apiEndPoint + name).then(res => res.body);
+// }
